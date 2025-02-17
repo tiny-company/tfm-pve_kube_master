@@ -72,8 +72,10 @@ resource "proxmox_virtual_environment_container" "test_vigea_kube_master-test" {
     }
   }
   network_interface {
+    ## quick reminder that this name is the lxc interface name not proxmox interface name
     name        = var.kube_master_net_int_name
     mac_address = macaddress.kube_master_net_int_mac_addr.address
+    bridge      = var.kube_master_net_bridge_int_name != null ? var.kube_master_net_bridge_int_name : ""
   }
 
   features {

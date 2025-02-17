@@ -87,6 +87,11 @@ variable "kube_master_net_int_name" {
   sensitive = true
 }
 
+variable "kube_master_net_bridge_int_name" {
+  type      = string
+  sensitive = true
+}
+
 variable "kube_master_default_username" {
   type      = string
   default   = "root"
