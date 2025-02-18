@@ -122,7 +122,7 @@ variable "kube_master_mem_dedi" {
 
 variable "kube_master_mem_swap" {
   type      = number
-  default   = 256
+  default   = 0
 }
 
 variable "kube_master_os_templ_file" {
@@ -192,7 +192,7 @@ kube_master_cpu_cores=2
 kube_master_disk_datastore="local-lvm"
 kube_master_disk_size=10
 kube_master_mem_dedi=1024
-kube_master_mem_swap=256
+kube_master_mem_swap=0
 kube_master_os_templ_file="local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst"
 kube_master_os_type="debian"
 kube_master_hostname="test-kube-master-test"

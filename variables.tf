@@ -44,7 +44,7 @@ variable "kube_master_mem_dedi" {
 
 variable "kube_master_mem_swap" {
   type      = number
-  default   = 256
+  default   = 0
 }
 
 variable "kube_master_os_templ_file" {
