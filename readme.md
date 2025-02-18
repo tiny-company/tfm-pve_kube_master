@@ -40,6 +40,7 @@ module "proxmox-kub_master" {
   kube_master_ipv4_gw = var.kube_master_ipv4_gw
   kube_master_ssh_pub_keys = var.default_root_ssh_pub_keys
   kube_master_net_int_name = var.kube_master_net_int_name
+  kube_master_net_bridge_int_name = var.kube_master_net_bridge_int_name
 }
 ```
 
@@ -164,6 +165,11 @@ variable "kube_master_net_int_name" {
   sensitive = true
 }
 
+variable "kube_master_net_bridge_int_name" {
+  type      = string
+  sensitive = true
+}
+
 variable "kube_master_default_username" {
   type      = string
   default   = "root"
@@ -195,6 +201,7 @@ kube_master_ipv4_mask="/24"
 kube_master_ipv4_gw="192.168.1.1"
 default_root_ssh_pub_keys=["ssh-rsa public_key_to_be_installed_on_the_kube_instances"]
 kube_master_net_int_name="eth0"
+kube_master_net_bridge_int_name="vmbr1"
 ```
 
 ## Sources : 
